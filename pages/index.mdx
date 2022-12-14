@@ -1,11 +1,25 @@
 # Introduction
- 
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
 
-## What is Nextra?
+`use-cardano` is a react context, hook, and set of components that makes interacting with the Cardano blockchain easy. It allows you to connect web3 dApp wallets using the [CIP-30 Web Bridge](https://cips.cardano.org/cips/cip30/) and uses [lucid](https://github.com/spacebudz/lucid) for tasks such as signing transactions and interacting with smart contracts.
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+## At-a-glance
 
-## Documentation
+While highly customizable, getting started with `use-cardano` is easy. Here's a minimal example of how to use it:
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+```tsx
+import { useCardano, useCardanoContext, SelectWalletProvider } from "use-cardano"
+
+const App = () => {
+  useCardano(config)
+
+  const { account } = useCardanoContext()
+
+  return (
+    <div>
+      <SelectWalletProvider />
+
+      <div>Connected Address: {account.address}</div>
+    </div>
+  )
+}
+```
