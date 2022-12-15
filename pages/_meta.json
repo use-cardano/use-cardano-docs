@@ -1,6 +1,12 @@
 {
   "index": "Introduction",
+  "installation": "Installation",
+  "basic-usage": "Basic Usage",
   "concepts": "Concepts",
+  "options": "Options",
+  "customization": "Customization",
+  "theming": "Theming",
+  "alternatives": "Alternatives",
   "about": {
     "title": "About",
     "type": "page"

@@ -1,7 +1,27 @@
-import { DocsThemeConfig } from "nextra-theme-docs"
+import { useRouter } from "next/router"
+import { DocsThemeConfig, useConfig } from "nextra-theme-docs"
 
 const config: DocsThemeConfig = {
   logo: <span>use-cardano</span>,
+  head: () => {
+    const { asPath } = useRouter()
+    const { frontMatter } = useConfig()
+
+    const title = frontMatter.title ? `${frontMatter.title} - Use Cardano` : "Use Cardano"
+
+    return (
+      <>
+        <title>{title}</title>
+
+        <meta property="og:url" content={`https://www.use-cardano.dev${asPath}`} />
+        <meta property="og:title" content={title} />
+        <meta
+          property="og:description"
+          content={frontMatter.description || "Makes building Cardano dApps easy."}
+        />
+      </>
+    )
+  },
   project: {
     link: "https://github.com/GGAlanSmithee/use-cardano",
   },
