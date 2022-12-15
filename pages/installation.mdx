@@ -4,24 +4,26 @@ title: Installation
 
 # Installation
 
-Hello and hi
+Installing use-cardano is quite straight forward. You can either use the starter template, or integrate it into an existing project.
 
 ## Next.JS Template
 
-The easiest way to get started with `use-cardano` is the starter template. It's a Next.JS project that has `use-cardano` installed and configured. You can use it as a starting point for your own project.
+The easiest way to get started is to use the starter template. It's a Next.JS project that has use-cardano installed and configured. You can use it as a starting point for your own project.
+
+_Link coming soon!_
 
 ## Integrating into an existing project
 
-If you already have a project and want to integrate `use-cardano` into it, you can do so by following the steps below.
+If you already have a project and want to integrate use-cardano into it, you can do so by following the steps below.
 
-## Peer dependencies
+_Steps coming soon!_
 
-`use-cardano` has a few peer dependencies that you'll need to install in your project. These are:
+## Considerations and peer dependencies
 
-### React
+use-cardano has two peer dependencies that you'll need to install in your project, namely react and lucid. If you are looking to use this library, we assume that you are already familiar with React, and as for lucid, you can read more about it [here](/usage#lucid).
 
-Since 
+### Installing lucid
 
-### Lucid
+lucid, which is built with deno.js - and therefore in typescript - is not bundled in the same manner as the typical npm package. This means that you'll need to use a bundler that supports esm and typescript, such as webpack or rollup, and configure it correctly to handle experimental features such as top-level await, so that it can be used in legacy browsers.
 
-Lucid is the engine that powers `use-cardano` as far as Cardano blockchain interactions go. Install I highly recommend 
+I advice you to look at the [Next.JS template](#nextjs-template) for an example of how to do this.

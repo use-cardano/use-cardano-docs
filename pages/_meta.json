@@ -1,7 +1,8 @@
 {
   "index": "Introduction",
   "installation": "Installation",
-  "basic-usage": "Basic Usage",
+  "usage": "Usage",
+  "lucid": "Lucid",
   "concepts": "Concepts",
   "options": "Options",
   "customization": "Customization",

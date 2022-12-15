@@ -1,10 +1,16 @@
 # Introduction
 
-`use-cardano` is a react context, hook, and set of components that makes interacting with the Cardano blockchain super easy. It allows you to connect web3 dApp wallets using the [CIP-30 Web Bridge](https://cips.cardano.org/cips/cip30/) and [lucid](https://github.com/spacebudz/lucid) for tasks such as signing transactions and interacting with smart contracts.
+use-cardano is a react context, hook, and set of components that makes interacting with the Cardano blockchain easy. It allows you to connect web3 dApp wallets using the [CIP-30 Web Bridge](https://cips.cardano.org/cips/cip30/) and perform tasks such as signing transactions and interacting with smart contracts using [lucid](https://github.com/spacebudz/lucid).
+
+## Philosophy
+
+The main design goal of use-cardano is to make it as easy as possible to build Cardano dApps with React. We hope this will lower the bar of entry into Cardano dApps development, and enable developers to focus on the unique value proposition of their products.
+
+While the library largely relies on lucid for core functionality, we went with the more generic name use-cardano to signify that we intend to expand beyond the core concepts with QoL utility functions, hooks and components.
 
 ## At-a-glance
 
-While highly customizable, getting started with `use-cardano` is easy. Here's a minimal example of how to use it:
+While highly customizable, getting started with use-cardano is easy. Here's a minimal example of how to use it:
 
 ```tsx copy
 import { useCardano, useCardanoContext, SelectWalletProvider } from "use-cardano"

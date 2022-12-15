@@ -4,6 +4,8 @@ title: Concepts
 
 # Concepts
 
+TODO
+
 ```js filename="demo.js" {3} copy
 let a = 1;
 
@@ -33,3 +35,7 @@ export const Counter = () => {
 import Counters from '../components/counters'
 
 <Counters />
+
+## Usage of React.context
+
+The library heavily relies on [React Context](https://reactjs.org/docs/context.html). This makes it very easy to access the state of the library from anywhere in the component tree. However, it also means that there is a possible performance cost, as context updates are potentially expensive. I have tried to mitigate this by using `useMemo` and `useCallback` to memoize the context values and setters, but I am not sure if this is enough, since this is still to be proven in a real world case. I don't forsee this being an issue, since the states should only update rarely, as the user interacts with the wallet provider, but if you experience performance related issues, please let me know.

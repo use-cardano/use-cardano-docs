@@ -1,0 +1,13 @@
+---
+title: Usage
+---
+
+# Usage
+
+_How to use use-cardano coming soon_
+
+## A note on React.context
+
+The library relies heavily on [React context](https://reactjs.org/docs/context.html). This makes it very easy to access the state of the library from anywhere in the component tree, but it also means that there could be a performance cost, as context updates are potentially expensive as they propagate throughout the application.
+
+We have tried to mitigate this by using `useMemo` and `useCallback` to memoize the context values and setters, but it is not clear if this is enough, and this is still needs to be measured at scale in a real world application. Since the context state only updates infrequently, as the user interacts with the wallet provider, we don't forsee this being an issue, but if you experience performance related issues, please let us know by [opening an issue](https://www.github.com/GGAlanSmithee/use-cardano/issues/new).
