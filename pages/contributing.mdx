@@ -1,0 +1,45 @@
+---
+title: Contributing
+---
+
+# Contributing to the development of use-cardano
+
+_Below is a dump from the use-cardano repo. TODO: fix this_
+
+
+## Examples
+
+See the `/example` folder
+
+## Components
+
+Alongside the core functionality of the hook, I am also working on a set of components that will make it easy to build Cardano dApps. The components are built on top of the hook and are intended to be used in conjunction with it. These can be found in the `/components` folder, and are currently in a very early stage.
+
+## Contributing / Development
+
+Feel free to contribute in any capacity you can and want to. Either by opening an issue, creating a pull request or just by giving feedback.
+
+New to Open Source development, or the Cardano dApps eco system? I know it can be daunting, but do not be afraid to reach out in an issue. Any contributions to `use-cardano` are welcome, wether it is a question, a bug report, a feature request or a pull request.
+
+### Running the project in development mode
+
+_OBS! It's probably possible to use either npm or yarn instead of pnpm, but I recommend using pnpm since it handles linking between the library project and the examples project properly, as well as being very performant._
+
+1. Clone the repository
+1. Install pnpm: `npm i -g pnpm` (this is recommended over npm or yarn because it handles dependency linking better)
+1. Install example dependencies: `cd example && pnpm i && cd ..`
+1. Link the library run time dependencies: `pnpm link ./example/node_modules/react ./example/node_modules/lucid-cardano`
+1. Install library dependencies: `pnpm i`
+1. Run the library in watch mode, and launch the example app: `pnpm dev`
+
+#### Reverse Proxy
+
+When running the project locally, the examples site will be served on localhost:3000.
+
+Some wallet providers (gerowallet) will not inject itself in the CIP-0030 web bridge if the page is not served over https. To get around this, the site is also served over a reverse proxy using [localtunnel](https://www.npmjs.com/package/localtunnel) in development mode. The proxied site will launch automatically in your default browser, and you will be informed that it's being proxied and prompted to continue.
+
+### Example app
+
+There is an example app in the `/example` folder. It is a simple react app that uses the library. It is set up to use the library in development mode, so you can make changes to the library and see the changes in the example app.
+
+![Example app](.github/example-app.png)
