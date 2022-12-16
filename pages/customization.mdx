@@ -3,3 +3,43 @@ title: Customization
 ---
 
 # Customization
+
+While you can use use-cardano as-is, it is fully customizable. This page will go over the different ways you can customize the library.
+
+## Custom styles
+
+use-cardano allows you to easily overwrite the default styles of its components. This is simply done with vanilla CSS, with a small set of classes, using BEM naming conventions.
+
+## BEM naming conventions
+
+These are the classes used by use-cardano, more information and context coming.
+
+- .cardano-wallet-selector
+- .cardano-wallet-selector\_\_button
+- .cardano-wallet-selector\_\_button--active
+- .cardano-wallet-selector\_\_button--loading
+- .cardano-wallet-selector\_\_button--warning
+- .cardano-wallet-selector\_\_button\_\_text
+- .cardano-wallet-selector\_\_button\_\_warning-sign
+- .cardano-wallet-selector\_\_menu
+- .cardano-wallet-selector\_\_menu\_\_item
+- .cardano-wallet-selector\_\_menu\_\_item button
+- .cardano-wallet-selector\_\_menu\_\_item button:disabled
+- .cardano-wallet-selector\_\_menu\_\_item button:not(:disabled):hover
+- .cardano-wallet-selector\_\_menu\_\_item:last-child
+- .cardano-wallet-selector\_\_menu\_\_item:last-child button
+- .cardano-wallet-selector\_\_menu\_\_item\_\_info
+- .cardano-toaster
+- .cardano-toaster--open
+- .cardano-toaster\_\_content
+- .cardano-toaster\_\_close-button
+- .cardano-toaster\_\_warning-list
+- .cardano-notification
+- .cardano-notification--open
+- .cardano-notification\_\_content
+
+If you don't whish to use the default styles at all, you can do so by simply not importing the `use-cardano/styles/use-cardano.css` file in your application. This will remove the default styles, but leave the class names according to the BEM naming convention for you to style to your liking.
+
+## Custom themes
+
+This is not implemented yet, but in an upcoming release, we will provide a few preset themes that you can use. You can track progress of this in [this issue](https://github.com/GGAlanSmithee/use-cardano/issues/32)
