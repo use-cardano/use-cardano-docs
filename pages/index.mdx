@@ -8,17 +8,17 @@ The main design goal of use-cardano is to make it as easy as possible to build C
 
 While the library largely relies on lucid for core functionality, we went with the more generic name use-cardano to signify that we intend to expand beyond the core concepts with QoL utility functions, hooks and components.
 
-While highly customizable, getting started with use-cardano is easy.
+While highly customizable, getting started with use-cardano is easy. Below is a minimal, but fully functional example.
 
-```tsx filename="basic-usage.tsx" copy
-import { useCardano, CardanoProvider, WalletSelector } from "use-cardano"
+```tsx filename="minimal-example.tsx" copy
+import { useCardano, CardanoProvider, CardanoWalletSelector, CardanoToaster } from "use-cardano"
 
 const Content = () => {
   const { account } = useCardano()
 
   return (
     <>
-      <WalletSelector />
+      <CardanoWalletSelector />
 
       <div>Connected Address: {account.address}</div>
     </>
@@ -27,9 +27,9 @@ const Content = () => {
 
 const App = () => (
   <CardanoProvider options={options}>
-    <SelectWalletProvider />
+    <Content />
 
-    <div>Connected Address: {account.address}</div>
+    <CardanoToaster />
   </CardanoProvider>
 )
 ```
