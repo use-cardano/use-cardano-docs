@@ -4,7 +4,7 @@ title: Options
 
 # Options
 
-You can configure use-cardano by passing an options object to the `useCardano` hook. 
+You can configure use-cardano by passing an options object to the `useCardano` hook.
 
 ```ts filename="useCardanoOptions.ts" copy
 type NodeProvider = "blockfrost" | "blockfrost-proxy"
@@ -30,7 +30,7 @@ type UseCardanoOptions = {
 ### options.autoConnectTo
 
 ```ts
-"nami" | "eternl" | "gerowallet" | "flint"
+;"nami" | "eternl" | "gerowallet" | "flint"
 ```
 
 If you want to automatically attempt to connect to a wallet provider, as soon as the user loads your site (even on their first visit), you can set this option to the name of the provider.
