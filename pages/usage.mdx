@@ -4,14 +4,67 @@ title: Usage
 
 # Usage
 
-There are three parts to using use-cardano:
+There are three parts to using use-cardano.
 
-* Wrapping your application in the `CardanoProvider`
-* Using the `useCardano` hook to access the state and functions of the library
-* Conditionally, adding the `CardanoWalletSelector` and `CardanoToaster` components to your application
+### 1. Wrap your app in the CardanoProvider
 
-## A note on React.context
+```jsx copy
+import { CardanoProvider, CardanoToaster } from "use-cardano"
 
-The library relies heavily on [React context](https://reactjs.org/docs/context.html). This makes it very easy to access the state of the library from anywhere in the component tree, but it also means that there could be a performance cost, as context updates are potentially expensive as they propagate throughout the application.
+const MyApp = () => {
+  return (
+    <CardanoProvider options={options}>
+      <Content />
+    </CardanoProvider>
+  )
+}
+```
 
-We have tried to mitigate this by using `useMemo` and `useCallback` to memoize the context values and setters, but it is not clear if this is enough, and this is still needs to be measured at scale in a real world application. Since the context state only updates infrequently, as the user interacts with the wallet provider, we don't forsee this being an issue, but if you experience performance related issues, please let us know by [opening an issue](https://www.github.com/GGAlanSmithee/use-cardano/issues/new).
+### 2. Use the components
+
+```jsx copy
+import "use-cardano/styles/use-cardano.css"
+import { CardanoWalletSelector, CardanoToaster } from "use-cardano"
+
+const Content = () => {
+  return (
+    <div>
+      <CardanoWalletSelector />
+
+      <CardanoToaster />
+    </div>
+  )
+}
+```
+
+### 3. Access state
+
+```jsx copy
+import { useCardano } from "use-cardano"
+
+const Component = () => {
+  const { account } = useCardano()
+
+  return (
+    <div>
+      <div>Connected Address: {account.address}</div>
+    </div>
+  )
+}
+```
+
+## Considerations
+
+use-cardano has two peer dependencies that you'll need to install in your project, namely react and lucid. If you are looking to use this library, we assume that you are already familiar with React, and as for lucid, you can read more about it [here](/usage#lucid).
+
+### A note on lucid
+
+lucid is an ES module built in typescript with deno.js. This means that you'll need to use a bundler that support esm, typescript, and experimental features such as top-level await and WebAssembly and configure it accordingly.
+
+By either using the [Next.JS template](installation/#nextjs-template) or following the [integrating into an existing project](installation/#integrating-into-an-existing-project) steps, you'll end up with a working version of this. For more information on lucid, visit their [github page](https://www.github.com/spacebudz/lucid).
+
+### Usage of React.context
+
+The library heavily relies on [React Context](https://reactjs.org/docs/context.html). This makes it very easy to access the state of the library from anywhere in the component tree. However, it also means that there is a possible performance cost, as context updates are potentially expensive.
+
+We have tried to mitigate this by using `useMemo` and `useCallback` to memoize the context values and functions, but it is not sure this is enough, since it's still to be proven. We don't forsee this being an issue, since the states should only update rarely, as the user interacts with the wallet provider, but if you experience performance related issues, please let us know by opening an [issue](https://www.github.com/GGAlanSmithee/use-cardano/issues/new).

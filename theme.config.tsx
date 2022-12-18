@@ -2,7 +2,15 @@ import { useRouter } from "next/router"
 import { DocsThemeConfig, useConfig } from "nextra-theme-docs"
 
 const config: DocsThemeConfig = {
-  logo: <span>use-cardano</span>,
+  logo: (
+    <span>
+      <b>use-cardano </b>
+
+      <small>
+        <i>v. 1.0.0-beta.1</i>
+      </small>
+    </span>
+  ),
   head: () => {
     const { asPath } = useRouter()
     const { frontMatter } = useConfig()

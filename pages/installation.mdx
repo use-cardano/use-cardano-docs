@@ -14,16 +14,15 @@ _Link coming soon!_
 
 ## Integrating into an existing project
 
-If you already have a project and want to integrate use-cardano into it, you can do so by following the steps below.
+If you want to integrate use-cardano into an existing project, follow the steps below. Depending on your tech stack, you might need to do some additional configuration. If you are having problems, please open an issue on [github](https://www.github.com/GGAlanSmithee/use-cardano/issues/new).
 
-_Steps coming soon!_
+### 1. Install peer dependencies and use-cardano
 
-## Considerations and peer dependencies
+```sh copy
+npm install react lucid-cardano use-cardano
+```
 
-use-cardano has two peer dependencies that you'll need to install in your project, namely react and lucid. If you are looking to use this library, we assume that you are already familiar with React, and as for lucid, you can read more about it [here](/usage#lucid).
+### 2. Configure your bundler
 
-### Installing lucid
-
-lucid, which is built with deno.js - and therefore in typescript - is not bundled in the same manner as the typical npm package. This means that you'll need to use a bundler that supports esm and typescript, such as webpack or rollup, and configure it correctly to handle experimental features such as top-level await, so that it can be used in legacy browsers.
-
-I advice you to look at the [Next.JS template](#nextjs-template) for an example of how to do this.
+* [Webpack](/installation/webpack)
+* [Rollup](/installation/rollup)

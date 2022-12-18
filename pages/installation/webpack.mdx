@@ -1,0 +1,17 @@
+---
+title: Webpack Configuration
+---
+
+# Webpack Configuration
+
+You'll need to configure webpack to support top-level await and WebAssembly. Assuming you are using webpack 5, you can do this by adding the following configuration.
+
+```js filename="webpack.config.js" copy
+module.exports = {
+  experiments: {
+    topLevelAwait: true,
+    asyncWebAssembly: true,
+    layers: true, // optional, required with some bundlers/frameworks
+  },
+}
+```

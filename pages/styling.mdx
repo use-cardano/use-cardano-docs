@@ -1,18 +1,16 @@
 ---
-title: Customization
+title: Styling
 ---
 
-# Customization
+## Styling
 
-While you can use use-cardano as-is, it is fully customizable. This page will go over the different ways you can customize the library.
+use-cardano comes with a set of fully styled components, which we try to keep as un-opinionated as possible to allow for wide usage out-of-the-box.
 
-## Custom styles
-
-use-cardano allows you to easily overwrite the default styles of its components. This is simply done with vanilla CSS, with a small set of classes, using BEM naming conventions. This allows for a straightforward implementation of your own styles, without having to worry about the internal structure of the components and fighting selector rule specificity.
+With that said, use-cardano allows you to easily overwrite the default styles of its components. This is done simply with a small set of classes in vanilla CSS, using BEM naming conventions. This allows for a straightforward implementation of your own styles, without having to worry about the internal structure of the components or fighting selector rule specificity.
 
 ## BEM naming conventions
 
-These are the classes used by use-cardano, more information and context coming. I am planning on doing a more visual breakdown so you easily can see what element each class is applied to.
+These are the classes used by use-cardano, more information and context coming. We are planning on doing a more visual breakdown so you easily can see what element each class is applied to.
 
 - .cardano-wallet-selector
 - .cardano-wallet-selector\_\_button
@@ -43,7 +41,3 @@ These are the classes used by use-cardano, more information and context coming. 
 - .cardano-notification\_\_content
 
 If you don't whish to use the default styles at all, you can do so by simply not importing the `use-cardano/styles/use-cardano.css` file in your application. This will remove the default styles, but leave the class names according to the BEM naming convention for you to style to your liking.
-
-## Custom themes
-
-This is not implemented yet, but in an upcoming release, we will provide a few preset themes that you can use. You can track progress of this in [this issue](https://github.com/GGAlanSmithee/use-cardano/issues/32)

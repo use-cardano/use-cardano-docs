@@ -3,3 +3,88 @@ title: Options
 ---
 
 # Options
+
+You can configure use-cardano by passing an options object to the `useCardano` hook. 
+
+```ts filename="useCardanoOptions.ts" copy
+type NodeProvider = "blockfrost" | "blockfrost-proxy"
+type WalletProvider = "nami" | "eternl" | "gerowallet" | "flint"
+type AllowedNetworks = ("mainnet" | "testnet")[]
+
+type UseCardanoNodeOptions = {
+  provider?: NodeProvider
+  proxyUrl?: string
+  projectId?: string
+}
+
+type UseCardanoOptions = {
+  autoConnectTo?: WalletProvider
+  autoReconnect?: boolean
+  allowedNetworks?: AllowedNetworks
+  node?: UseCardanoNodeOptions
+}
+```
+
+## Options details
+
+### options.autoConnectTo
+
+```ts
+"nami" | "eternl" | "gerowallet" | "flint"
+```
+
+If you want to automatically attempt to connect to a wallet provider, as soon as the user loads your site (even on their first visit), you can set this option to the name of the provider.
+
+default: `undefined`
+
+### options.autoReconnect
+
+```ts
+true | false
+```
+
+If you don't want to automatically reconnect the user to the last used wallet provider you can set this option to `false`.
+
+default: `true`
+
+### options.allowedNetworks
+
+```ts
+("mainnet" | "testnet")[]
+```
+
+If you want to limit the networks that the user can connect to, you can set this option to an array of the networks you want to allow. If the user tries to connect to a network that is not in this array, they will be shown an error and the `lucid` instance will be set to undefined, preventing the user from interacting with the blockchain.
+
+default: `["mainnet"]`
+
+### options.node.provider
+
+```ts
+"blockfrost" | "blockfrost-proxy"
+```
+
+The node provider is the service that you will use to connect to the Cardano blockchain. Currently, only [Blockfrost](https://www.blockfrost.io) is supported, but we are looking to expend on this, as lucid does the same.
+
+We suggest that you use the blockfrost-proxy variant. With this, you need to provide a proxy api endpoint, but it allows you to not expose your Blockfrost project id to the client. See the [NextJS template](/installation#nextjs-template) and the `/pages/api/blockfrost/[[...all]].ts` file for an example of this.
+
+default: `blockfrost`
+
+### options.node.proxyUrl
+
+```ts
+string | undefined
+```
+
+Needed if `options.node.provider` is set to `blockfrost-proxy`. This is the url of the proxy api endpoint.
+
+default: `undefined`
+
+### options.node.projectId
+
+```ts
+string | undefined
+```
+
+Needed if `options.node.provider` is set to `blockfrost`. This is the Blockfrost project id.
+
+default: `undefined`
