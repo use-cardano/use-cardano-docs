@@ -9,7 +9,8 @@ You can configure use-cardano by passing an options object to the `useCardano` h
 ```ts filename="useCardanoOptions.ts" copy
 type NodeProvider = "blockfrost" | "blockfrost-proxy"
 type WalletProvider = "nami" | "eternl" | "gerowallet" | "flint"
-type AllowedNetworks = ("mainnet" | "testnet")[]
+type AllowedNetworks = ("Mainnet" | "Testnet")[]
+type TestnetNetwork = "Testnet" | "Preview" | "Preprod"
 
 type UseCardanoNodeOptions = {
   provider?: NodeProvider
@@ -21,6 +22,7 @@ type UseCardanoOptions = {
   autoConnectTo?: WalletProvider
   autoReconnect?: boolean
   allowedNetworks?: AllowedNetworks
+  testnetNetwork?: TestnetNetwork
   node?: UseCardanoNodeOptions
 }
 ```
@@ -50,12 +52,22 @@ default: `true`
 ### options.allowedNetworks
 
 ```ts
-("mainnet" | "testnet")[]
+("Mainnet" | "Testnet")[]
 ```
 
 If you want to limit the networks that the user can connect to, you can set this option to an array of the networks you want to allow. If the user tries to connect to a network that is not in this array, they will be shown an error and the `lucid` instance will be set to undefined, preventing the user from interacting with the blockchain.
 
 default: `["mainnet"]`
+
+### options.testnetNetwork
+
+```ts
+"Testnet" | "Preview" | "Preprod"
+```
+
+Since the three test networks use the same id, 0, we cannot distinguish between them from the wallet PoV. However, to instruct which testnet you intend to use, you can set this is the `testnetNetwork` option. This is only indirectly used internally in use-cardano, in communication to the node provider (Blockfrost) but it could be used when communicating to the user etc.
+
+default: `Preview`
 
 ### options.node.provider
 
