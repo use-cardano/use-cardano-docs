@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GGAlanSmithee/use-cardano-docs.git"
+    "url": "git+https://github.com/use-cardano/use-cardano-docs.git"
   },
   "author": "Shu Ding <g@shud.in>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/GGAlanSmithee/use-cardano-docs/issues"
+    "url": "https://github.com/use-cardano/use-cardano-docs/issues"
   },
-  "homepage": "https://github.com/GGAlanSmithee/use-cardano-docs#readme",
+  "homepage": "https://github.com/use-cardano/use-cardano-docs#readme",
   "dependencies": {
     "next": "^13.0.6",
     "nextra": "2.0.1",

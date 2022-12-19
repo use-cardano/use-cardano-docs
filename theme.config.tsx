@@ -31,12 +31,12 @@ const config: DocsThemeConfig = {
     )
   },
   project: {
-    link: "https://github.com/GGAlanSmithee/use-cardano",
+    link: "https://github.com/use-cardano/use-cardano",
   },
   // chat: {
   //   link: 'https://discord.com/use-cardano',
   // },
-  docsRepositoryBase: "https://github.com/GGAlanSmithee/use-cardano-docs",
+  docsRepositoryBase: "https://github.com/use-cardano/use-cardano-docs",
   footer: {
     text: "use-cardano",
   },
