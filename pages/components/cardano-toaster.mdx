@@ -1,0 +1,20 @@
+---
+title: CardanoToaster
+---
+
+# CardanoToaster
+
+The `<CardanoToaster />` component is primarily used to show feedback to the user. This happens internally as the user interacts with the `<CardanoWalletSelector />` component, but you can also use it to show your own feedback to the user with `showToaster(title, message)` and `hideToaster()` that is accessible from the `useCardano` hook.
+
+## Usage
+
+```tsx filename="CardanoToaster.tsx" copy
+import { CardanoToaster } from "use-cardano"
+
+// default position is bottom right
+export const CardanoWalletSelectorExample = () => <CardanoToaster position="bottomleft" />
+```
+
+## Notes
+
+The default timeout of the toaster is 10 seconds. This is not configurable at the moment, but will be in the future. The user can either delay the timeout by hovering over the toaster, or dismiss it by clicking on the close button of it.

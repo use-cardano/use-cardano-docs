@@ -14,10 +14,6 @@ According to Lucid themselves, Lucid is
 
 > "a library, which allows you to create Cardano transactions and off-chain code for your Plutus contracts in JavaScript, Deno and Node.js."
 
-## How does it work?
-
-Coming soon ...
-
 ## How do I access Lucid in use-cardano?
 
 when using the useCardano hook, an instance of Lucid is available as the lucid property. This will be either an instance of Lucid, or if - for example - the user has not connected their wallet, undefined.
@@ -30,7 +26,7 @@ const { lucid } = useCardano()
 
 ## What is Lucid used for in use-cardano?
 
-In use-cardano, Lucid is used for everything related to the Cardano blockchain. It is used to create and sign transactions, and interact with smart contracts. There are a bunch of examples of this, which you can find in the [examples](/examples) section.
+In use-cardano, Lucid is used for all blockchain interactions, such as creating and signing transactions, interact with smart contracts, and more. We will add examples of this in the near future.
 
 ```ts filename="simple-mint.ts" copy
 const tx = await lucid
