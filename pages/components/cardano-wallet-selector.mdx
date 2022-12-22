@@ -1,0 +1,27 @@
+---
+title: CardanoWalletSelector
+---
+
+# CardanoWalletSelector
+
+The `<CardanoWalletSelector />` component allows the user to connect to a wallet from a list of wallets. The list of wallets is provided by the use-cardano hook, and are hardcoded, so you can't add your own wallets to the list atm, but this will be changed in the future. The current list of supported wallets is eternl, flint, gerowallet and nami.
+
+## Usage
+
+```tsx filename="CardanoWalletSelector.tsx" copy
+import { CardanoWalletSelector } from "use-cardano"
+
+export const CardanoWalletSelectorExample = () => <CardanoWalletSelector />
+```
+
+## Result
+
+import { CardanoWalletSelectorExample } from "../../components/CardanoWalletSelectorExample"
+
+<CardanoWalletSelectorExample />
+
+## Notes
+
+The component will do as good of a job as possible to provide the user with information and warning regarding the current state of connection to a selected wallet. For example, if the user connects to a wallet, but the wallet is not connected to the configured allowed network, the user will be warned about this.
+
+Also, in the case of a wallet supports live account and network updates (currently only Nami) this will be shown to the user. All feedback is communicated to the user through the `<CardanoToaster />` component, however, you can also use the `useCardano` hook to get the current state of the connection to the wallet.
