@@ -14,7 +14,7 @@ specifiers:
   react: ^18.2.0
   react-dom: ^18.2.0
   typescript: ^4.9.4
-  use-cardano: 1.0.0-beta.13
+  use-cardano: 1.0.0-beta.14
 
 dependencies:
   lucid-cardano: 0.8.3
@@ -24,7 +24,7 @@ dependencies:
   nextra-theme-docs: 2.0.1_gvvct4imq5upoiloat43sswrza
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  use-cardano: 1.0.0-beta.13_h3oi7stj5a7fdvdpxh2fib5ti4
+  use-cardano: 1.0.0-beta.14_h3oi7stj5a7fdvdpxh2fib5ti4
 
 devDependencies:
   '@types/node': 18.11.17
@@ -2670,8 +2670,8 @@ packages:
       unist-util-visit-parents: 5.1.1
     dev: false
 
-  /use-cardano/1.0.0-beta.13_h3oi7stj5a7fdvdpxh2fib5ti4:
-    resolution: {integrity: sha512-xgtc4Vd/J5AvmARf0MhdUVCx2Htn1+A9OjUlNzpvA3Cz7yTwQu2okyrbM3Mj84Tnwofo5V2NPGJugVsfqYp3pw==}
+  /use-cardano/1.0.0-beta.14_h3oi7stj5a7fdvdpxh2fib5ti4:
+    resolution: {integrity: sha512-/ISGGHq5y5vc+62bCAOMH95T/ctKIx4/X5HMHH8FeWMUpDUWY2fN1xhJ9HQaXjclnJ/A1Q6grTXaKrxl8Mjnsg==}
     engines: {node: ^16.15.0  || ^17.0.0 || ^18.0.0}
     peerDependencies:
       lucid-cardano: 0.8.3
