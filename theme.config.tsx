@@ -1,5 +1,6 @@
 import { useRouter } from "next/router"
 import { DocsThemeConfig, useConfig } from "nextra-theme-docs"
+import packageJson from "package.json"
 
 const config: DocsThemeConfig = {
   logo: (
@@ -7,7 +8,7 @@ const config: DocsThemeConfig = {
       <b>use-cardano </b>
 
       <small>
-        <i>v. 1.0.0-beta.1</i>
+        <i>v. {packageJson.dependencies["use-cardano"]}</i>
       </small>
     </span>
   ),
@@ -23,7 +24,7 @@ const config: DocsThemeConfig = {
 
         <link rel="icon" href="/favicon.png" />
         <link rel="icon" href="/favicon.svg" />
-        
+
         <meta property="og:url" content={`https://www.use-cardano.dev${asPath}`} />
         <meta property="og:title" content={title} />
         <meta
