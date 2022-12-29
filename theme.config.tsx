@@ -21,6 +21,9 @@ const config: DocsThemeConfig = {
       <>
         <title>{title}</title>
 
+        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.svg" />
+        
         <meta property="og:url" content={`https://www.use-cardano.dev${asPath}`} />
         <meta property="og:title" content={title} />
         <meta
