@@ -15,7 +15,7 @@ specifiers:
   react: ^18.2.0
   react-dom: ^18.2.0
   typescript: ^4.9.4
-  use-cardano: 1.0.0
+  use-cardano: 1.1.0
   use-cardano-blockfrost-proxy: ^1.0.0
 
 dependencies:
@@ -27,7 +27,7 @@ dependencies:
   nextra-theme-docs: 2.0.2_q76c2b4vyoegvsbrcwkfvimnai
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  use-cardano: 1.0.0_h3oi7stj5a7fdvdpxh2fib5ti4
+  use-cardano: 1.1.0_h3oi7stj5a7fdvdpxh2fib5ti4
   use-cardano-blockfrost-proxy: 1.0.0_http-proxy@1.18.1
 
 devDependencies:
@@ -2806,8 +2806,8 @@ packages:
       http-proxy: 1.18.1
     dev: false
 
-  /use-cardano/1.0.0_h3oi7stj5a7fdvdpxh2fib5ti4:
-    resolution: {integrity: sha512-CeYpvEJjoEiIEJXpcyVZ7Muu2kS/A7ys/ZiIokQ/EheFKgpjQpnqa0+kMRv8BEO4jAIS1i/Hdpt8LI5aBf0lxw==}
+  /use-cardano/1.1.0_h3oi7stj5a7fdvdpxh2fib5ti4:
+    resolution: {integrity: sha512-uPkMxnLJdyfO9rhD+F1T8fd3CtsZVhG+wjpK13thTpaZVms9AnARTFJpS8f2ongi3gFXmk0Vaf4Y9LiJKtcrlw==}
     engines: {node: ^16.15.0  || ^17.0.0 || ^18.0.0}
     peerDependencies:
       lucid-cardano: 0.8.3

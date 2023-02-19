@@ -68,3 +68,21 @@ By either using the [Next.JS template](installation/#nextjs-template) or followi
 The library heavily relies on [React Context](https://reactjs.org/docs/context.html). This makes it very easy to access the state of the library from anywhere in the component tree. However, it also means that there is a possible performance cost, as context updates are potentially expensive.
 
 We have tried to mitigate this by using `useMemo` and `useCallback` to memoize the context values and functions, but it is not sure this is enough, since it's still to be proven. We don't forsee this being an issue, since the states should only update rarely, as the user interacts with the wallet provider, but if you experience performance related issues, please let us know by opening an [issue](https://www.github.com/use-cardano/use-cardano/issues/new).
+
+### UseCardanoConsumer
+
+If you need to access the `use-cardano` context state directly, you can use the `UseCardanoConsumer` component. This is useful if you need to access the context state in a class component, and i'ts actually a more performant way of accessing the context state than using the `useCardano` hook, limiting the number of re-renders.
+
+```jsx copy
+import { UseCardanoConsumer } from "use-cardano"
+
+const Component = () => {
+  return (
+    <div>
+      <UseCardanoConsumer>
+        {({ account }) => <div>Connected Address: {account.address}</div>}
+      </UseCardanoConsumer>
+    </div>
+  )
+}
+```

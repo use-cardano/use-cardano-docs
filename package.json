@@ -29,7 +29,7 @@
     "nextra-theme-docs": "2.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "use-cardano": "1.0.0",
+    "use-cardano": "1.1.0",
     "use-cardano-blockfrost-proxy": "^1.0.0"
   },
   "devDependencies": {
