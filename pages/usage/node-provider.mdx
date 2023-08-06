@@ -1,0 +1,33 @@
+# Node Provider
+
+When using `use-cardano`, behind the scenes (via Lucid) to actually interact with the chain, a call is made to a RPC node. Currently, we only support [Blockfost](https://blockfrost.io/), and there are two ways to use it:
+
+## options.node.provider = 'blockfrost' (default)
+
+This is the default option, and it will use the Blockfrost API directly. This is the simplest option, but it has a drawback, which is that it requires you to expose your API key in the browser, by setting the `options.node.projectId` to your Blockfrost API key. This is not recommended, and should only be used for testing purposes.
+
+```ts
+const options = {
+  node: {
+    provider: "blockfrost",
+    projectId: "your-blockfrost-api-key",
+  },
+}
+```
+
+## options.node.provider = 'blockfrost-proxy'
+
+As an alternative to `blockfrost`, `blockfrost-proxy` allows you to use a proxy server to interact with the Blockfrost API. This is the recommended option, as it allows you to keep your API key secret.
+
+```ts
+const options = {
+  node: {
+    provider: "blockfrost-proxy",
+    proxyUrl: "/api/blockfrost", // the path to your proxy server
+  },
+}
+```
+
+## use-cardano-blockfrost-proxy
+
+For simplicity, we have authored a blockfrost proxy api which can easily be used with Next.JS. See [use-cardano-blockfrost-proxy](https://github.com/use-cardano/use-cardano-blockfrost-proxy) for more information.
