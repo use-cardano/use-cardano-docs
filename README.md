@@ -1,6 +1,6 @@
 # use-cardano docs
 
-This repository contains documentations for [use-cardano](https://github.com/GGAlanSmtihee/use-cardano).
+This repository contains documentations for [use-cardano](https://github.com/use-cardano/use-cardano).
 
 ## License
 
